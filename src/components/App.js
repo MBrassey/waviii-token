@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import waviiiLogo from '../waviii-logo.png';
 import './App.css';
 import Web3 from 'web3';
-import waviii from '../abis/waviii.json'
+import Waviii from '../abis/waviii.json'
 
 class App extends Component {
   async componentWillMount() {
@@ -28,7 +28,7 @@ class App extends Component {
     const accounts = await web3.eth.getAccounts()
     this.setState({ account: accounts[0] })
     const waviiiTokenAddress = "0xE7258A16361914E83d24314638818A2AbF0d668B" // Replace waviii Address Here
-    const waviii = new web3.eth.Contract(waviii.abi, waviiiTokenAddress)
+    const waviii = new web3.eth.Contract(Waviii.abi, waviiiTokenAddress)
     this.setState({ waviii: waviii })
     const balance = await waviii.methods.balanceOf(this.state.account).call()
     this.setState({ balance: web3.utils.fromWei(balance.toString(), 'Ether') })
