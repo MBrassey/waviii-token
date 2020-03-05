@@ -1236,12 +1236,12 @@
         }
       },
       "links": {},
-      "address": "0xc4fC79F22c36C94Ea10b2132E6218A80a5D002E7",
-      "transactionHash": "0x50a9351d35f826ad25299a23974629c383777e9dd6dfd044b725e5dc83c13a88"
+      "address": "0x305fbf7bF087aE897899e756cef29F960b1b7eb7",
+      "transactionHash": "0x8294ec0298e73e08fd71752a474401a64c953b8080ce9f7adc43911004910879"
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2020-03-05T23:19:59.150Z",
+  "updatedAt": "2020-03-05T23:26:09.716Z",
   "devdoc": {
     "methods": {
       "allowance(address,address)": {
