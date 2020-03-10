@@ -1,7 +1,7 @@
 {
   "name": "waviii",
   "version": "1.0.0",
-  "description": "waviii ERC20 Token",
+  "description": "waviii Token",
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
@@ -21,5 +21,9 @@
   "homepage": "https://github.com/luc1dLife/waviii#readme",
   "devDependencies": {
     "openzeppelin-solidity": "^2.5.0"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "truffle-hdwallet-provider": "^1.0.17"
   }
 }
