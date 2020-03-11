@@ -7,7 +7,7 @@ module.exports = async function(deployer) {
   const token = await waviii.deployed()
   // Mint ALL waviii Tokens for Luc1d
   await token.mint(
-    '0x09386583Ad6AF00e80b6CdeEFc82071fbc4e1e1B',
-    '1000000000000000000000000000'
+    '0x26A24D1a08181192Bee65d4fa08b8Ac50aE65468',
+    '1000000000000000000000000'
   )
 };
