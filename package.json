@@ -22,9 +22,11 @@
   },
   "homepage": "https://github.com/luc1dLife/waviii#readme",
   "devDependencies": {
-    "openzeppelin-solidity": "^2.5.0"
+    "openzeppelin-solidity": "^2.5.0",
+    "token-test-suite": "^0.1.1"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "chai-bignumber": "3.0.0",

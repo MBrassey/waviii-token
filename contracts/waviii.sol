@@ -7,13 +7,13 @@ contract waviii is ERC20Mintable {
   string  public symbol;
   uint256 public decimals;
   string  public standard;
-  uint256 public totalSupply;
+  string  public statement;
 
   constructor() public {
     name = "waviii Token";
     symbol = "waviii";
     decimals = 18;
     standard = "waviii Token v1.0";
-    totalSupply = "";
+    statement = "Something Cool";
   }
 }
