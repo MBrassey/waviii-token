@@ -7,7 +7,7 @@ module.exports = async function(deployer) {
   const token = await waviii.deployed()
   // Mint ALL waviii Tokens for admin / Lucid
   await token.mint(
-    '0x9dB16e30c7AEa07baC4CEc61aDe6DbE9854D732E',
+    '0x820dF1087EbB9bb1510445bB86C732707a290BD5',
     '1000000000000000000000000'
   )
 };

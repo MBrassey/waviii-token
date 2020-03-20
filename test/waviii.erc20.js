@@ -27,7 +27,7 @@ contract('waviii', function(accounts) {
       return tokenInstance.totalSupply();
     }).then(function(totalSupply) {
       assert.equal(totalSupply.toNumber(), 1000000, 'sets the total supply to the initial supply');
-      adminBalance = web3.eth.getBalance(0x9dB16e30c7AEa07baC4CEc61aDe6DbE9854D732E);
+      adminBalance = web3.eth.getBalance(0);
       assert.equal(adminBalance.toNumber(), 1000000, 'it allocates the initial supply to the admin account');
     });
   });
