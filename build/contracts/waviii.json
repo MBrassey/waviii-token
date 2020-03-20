@@ -1653,12 +1653,12 @@
         }
       },
       "links": {},
-      "address": "0x2F509e342d833C5F0ABbDC1BCF89f86557397c65",
-      "transactionHash": "0x17fd9ef5f31a5920d75ad443a2cf8d5a77eeca0b12d40323af651bd6e050034e"
+      "address": "0x347b9c6d865cdE19CefeE2f3943CCD95115C21ad",
+      "transactionHash": "0x250e993cd5403524b6dc9f581bab0d65e62a7acb05782d3ea9f035ea5998ea2e"
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2020-03-20T13:25:05.654Z",
+  "updatedAt": "2020-03-20T13:36:14.192Z",
   "devdoc": {
     "methods": {
       "allowance(address,address)": {
