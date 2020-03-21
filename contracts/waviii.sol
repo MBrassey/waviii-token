@@ -1,10 +1,24 @@
 pragma solidity ^0.5.0;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/token/ERC20/ERC20Detailed.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20Mintable.sol";
 
-contract waviii is ERC20, ERC20Detailed {
-    constructor(uint256 initialSupply) ERC20Detailed("waviii Token", "waviii", 18) public {
-        _mint(msg.sender, initialSupply);
-    }
+contract waviii is ERC20Mintable {
+  string  public name;
+  string  public symbol;
+  uint256 public decimals;
+  string  public standard;
+  string  public statement;
+
+  constructor() public {
+    name = "waviii Token";
+    symbol = "waviii";
+    decimals = 18;
+    standard = "waviii Token v1.0";
+    statement = "Something Cool";
+  }
 }
+//contract waviii is ERC20, ERC20Detailed {
+//    constructor(uint256 initialSupply) ERC20Detailed("waviii Token", "waviii", 18) public {
+//        _mint(msg.sender, initialSupply);
+//    }
+//}
