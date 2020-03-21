@@ -21,9 +21,6 @@
     "url": "https://github.com/luc1dLife/waviii/issues"
   },
   "homepage": "https://github.com/luc1dLife/waviii#readme",
-  "devDependencies": {
-    "openzeppelin-solidity": "^2.5.0"
-  },
   "dependencies": {
     "@openzeppelin/contracts": "^2.5.0",
     "chai": "^4.2.0",
