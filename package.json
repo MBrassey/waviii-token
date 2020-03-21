@@ -22,8 +22,7 @@
   },
   "homepage": "https://github.com/luc1dLife/waviii#readme",
   "devDependencies": {
-    "openzeppelin-solidity": "^2.5.0",
-    "token-test-suite": "^0.1.1"
+    "openzeppelin-solidity": "^2.5.0"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^2.5.0",
