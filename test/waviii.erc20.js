@@ -8,13 +8,13 @@ contract('waviii', function (accounts) {
 		// accounts to test with, accounts[0] being the contract owner
 		accounts: accounts,
 
-		// factory method to create new token contract
+		// factory method to create new waviii contract
 		create: async function () {
-			return await waviii.new();
+            return await waviii.new(1000000);
 		},
 
-		// factory callbacks to mint the tokens
-		// use "transfer" instead of "mint" for non-mintable tokens
+		// factory callbacks to mint the waviiis
+		// use "transfer" instead of "mint" for non-mintable waviiis
 		mint: async function (token, to, amount) {
 			return await token.transfer(to, amount, { from: accounts[0] });
 		},
@@ -23,7 +23,7 @@ contract('waviii', function (accounts) {
 		// also test the increaseApproval/decreaseApproval methods (not part of the ERC-20 standard)
 		increaseDecreaseApproval: false,
 
-		// token info to test
+		// waviii info to test
 		name: 'waviii Token',
 		symbol: 'waviii',
 		decimals: 18,
