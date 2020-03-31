@@ -2,6 +2,7 @@ var waviii = artifacts.require("./waviii.sol");
 
 contract('waviii', function(accounts) {
   var tokenInstance;
+  var admin = '0x9dB16e30c7AEa07baC4CEc61aDe6DbE9854D732E';
 
   it('initializes the contract with the correct values', function() {
     return waviii.deployed().then(function(instance) {
@@ -36,24 +37,26 @@ contract('waviii', function(accounts) {
       // Test `require` statement first by transferring something larger than the sender's balance
       return tokenInstance.transfer.call(accounts[1], '99999999999999999999999');
     }).then(assert.fail).catch(function(error) {
-      console.log(error)
+      //console.log(error)
       assert(error.message.indexOf('revert') >= 0, 'error message must contain revert');
-      return tokenInstance.transfer.call(accounts[1], 250000, { from: accounts[0] });
+      return tokenInstance.transfer.call(accounts[1], 250000, { from: admin });
     }).then(function(success) {
       assert.equal(success, true, 'it returns true');
-      return tokenInstance.transfer(accounts[1], 250000, { from: accounts[0] });
+      return tokenInstance.transfer(accounts[1], 250000, { from: admin });
     }).then(function(receipt) {
+      console.log()
       assert.equal(receipt.logs.length, 1, 'triggers one event');
       assert.equal(receipt.logs[0].event, 'Transfer', 'should be the "Transfer" event');
-      assert.equal(receipt.logs[0].args._from, accounts[0], 'logs the account the tokens are transferred from');
+      assert.equal(receipt.logs[0].args._from, admin, 'logs the account the tokens are transferred from');
       assert.equal(receipt.logs[0].args._to, accounts[1], 'logs the account the tokens are transferred to');
       assert.equal(receipt.logs[0].args._value, 250000, 'logs the transfer amount');
-      return tokenInstance.balanceOf(accounts[1]);
+     return tokenInstance.balanceOf(admin);
     }).then(function(balance) {
-      assert.equal(balance.toNumber(), 250000, 'adds the amount to the receiving account');
-      return tokenInstance.balanceOf(accounts[0]);
+      assert.equal(balance.toString(), 250000, 'adds the amount to the receiving account');
+      return tokenInstance.balanceOf(admin);
     }).then(function(balance) {
-      assert.equal(balance.toNumber(), 750000, 'deducts the amount from the sending account');
+      console.log(balanceOf(admin));
+      assert.equal(balance.toString(), 750000, 'deducts the amount from the sending account');
     });
   });
 });
