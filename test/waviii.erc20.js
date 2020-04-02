@@ -46,12 +46,12 @@ contract('waviii', function(accounts) {
       assert.equal(receipt.logs[0].args.from, accounts[0], 'logs the account the tokens are transferred from');
       assert.equal(receipt.logs[0].args.to, accounts[1], 'logs the account the tokens are transferred to');
       assert.equal(receipt.logs[0].args.value, '250000', 'logs the transfer amount');
-     return tokenInstance.balanceOf(accounts[1]);
+     return tokenInstance.balanceOf(accounts[0]);
     }).then(function(balance) {
-      assert.equal(balance.toString(), 250000, 'adds the amount to the receiving account');
-      return tokenInstance.balanceOf(accounts[0]);
+      assert.equal(balance.toString(), 999999999999999750000, 'adds the amount to the receiving account');
+      return tokenInstance.balanceOf(accounts[1]);
     }).then(function(balance) {
-      assert.equal(balance.toString(), 999999999999999750000, 'deducts the amount from the sending account');
+      assert.equal(balance.toString(), 250000, 'deducts the amount from the sending account');
     });
   });
 });
