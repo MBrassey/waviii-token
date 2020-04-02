@@ -7,7 +7,7 @@ module.exports = async function(deployer) {
   const erc20token = await waviii.deployed()
   // Mint 1,000 waviii Tokens for the deployer
   await erc20token.mint(
-    '0x9dB16e30c7AEa07baC4CEc61aDe6DbE9854D732E',
+    '0x5F649414259e3E3bCC8450f6c30979551A6C637f',
     '1000000000000000000000'
   )
 };
