@@ -38,12 +38,12 @@ contract('waviii', function(accounts) {
     }).then(assert.fail).catch(function(error) {
       //console.log(error)
       assert(error.message.indexOf('revert') >= 0, 'error message must contain revert');
-      //return tokenInstance.transfer.call(accounts[1], 250000, { from: accounts[0] });
-      return tokenInstance.transfer.call(accounts[1], '250000');
+      return tokenInstance.transfer.call(accounts[1], '250000', { from: accounts[0] });
+      //return tokenInstance.transfer.call(accounts[1], '250000');
     }).then(function(success) {
       assert.equal(success, true, 'it returns true');
-      //return tokenInstance.transfer(accounts[1], 250000, { from: accounts[0] });
-      return tokenInstance.transfer(accounts[1], '250000');
+      return tokenInstance.transfer(accounts[1], '250000', { from: accounts[0] });
+      //return tokenInstance.transfer(accounts[1], '250000');
     }).then(function(receipt) {
       //console.log(receipt.logs[0].args)
       //console.log(receipt.logs[0])
@@ -54,10 +54,10 @@ contract('waviii', function(accounts) {
       assert.equal(receipt.logs[0].args.value, '250000', 'logs the transfer amount');
      return tokenInstance.balanceOf(accounts[0]);
     }).then(function(balance) {
-      assert.equal(balance.toString(), '999999999999999750000', 'adds the amount to the receiving account');
+      assert.equal(balance.toString(), 999999999999999750000, 'adds the amount to the receiving account');
       return tokenInstance.balanceOf(accounts[1]);
     }).then(function(balance) {
-      assert.equal(balance.toString(), '250000', 'deducts the amount from the sending account');
+      assert.equal(balance.toString(), 250000, 'deducts the amount from the sending account');
     });
   });
 });
