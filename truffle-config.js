@@ -58,7 +58,7 @@ module.exports = {
           `https://kovan.infura.io/v3/${process.env.INFURA_API_KEY}`
         )
       },
-       gas: 500000,
+       gas: 3250000,
        gasPrice: 25000000000,
        network_id: 42
     },
@@ -70,7 +70,7 @@ module.exports = {
           `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`
         )
       },
-       gas: 500000,
+       gas: 2500000,
        gasPrice: 25000000000,
        confirmations: 2,
        network_id: 1

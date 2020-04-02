@@ -1,0 +1,102 @@
+luc1d@trident ~/C/waviii> truffle migrate --reset --network mainnet
+Compiling ./contracts/waviii.sol...
+Writing artifacts to ./build/contracts
+
+⚠️  Important ⚠️
+If you're using an HDWalletProvider, it must be Web3 1.0 enabled or your migration will hang.
+
+
+Migrations dry-run (simulation)
+===============================
+> Network name:    'mainnet-fork'
+> Network id:      1
+> Block gas limit: 9983970
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > account:             0x07b4E3A9134Bc88276e6Ff9516620755144CEC79
+   > balance:             0.19043511411042219
+   > gas used:            269844
+   > gas price:           25 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0067461 ETH
+
+
+   Deploying 'waviii'
+   ------------------
+   > account:             0x07b4E3A9134Bc88276e6Ff9516620755144CEC79
+   > balance:             0.13777348911042219
+   > gas used:            2106465
+   > gas price:           25 gwei
+   > value sent:          0 ETH
+   > total cost:          0.052661625 ETH
+
+   -------------------------------------
+   > Total cost:         0.059407725 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.059407725 ETH
+
+⚠️  Important ⚠️
+If you're using an HDWalletProvider, it must be Web3 1.0 enabled or your migration will hang.
+
+
+Starting migrations...
+======================
+> Network name:    'mainnet'
+> Network id:      1
+> Block gas limit: 9969354
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0xc4450ab3a3b5f81531f0ea7af4d676bb079dbedbfe2c51bb350b3ec667e3040e
+   > Blocks: 2            Seconds: 53
+   > contract address:    0xb7C13E7641d082b7C8c99334408b2acB068735e2
+   > account:             0x07b4E3A9134Bc88276e6Ff9516620755144CEC79
+   > balance:             0.19106561411042219
+   > gas used:            244624
+   > gas price:           25 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0061156 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 9793105)
+   > confirmation number: 2 (block: 9793106)
+
+   Deploying 'waviii'
+   ------------------
+   > transaction hash:    0x5cdf36d71d8ad88e79547bf3293de111a3f23c1f675767c0376a40fcd52576a0
+   > Blocks: 2            Seconds: 25
+   > contract address:    0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2
+   > account:             0x07b4E3A9134Bc88276e6Ff9516620755144CEC79
+   > balance:             0.14600378911042219
+   > gas used:            1802473
+   > gas price:           25 gwei
+   > value sent:          0 ETH
+   > total cost:          0.045061825 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 9793111)
+   > confirmation number: 2 (block: 9793112)
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:         0.051177425 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.051177425 ETH

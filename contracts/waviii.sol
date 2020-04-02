@@ -14,6 +14,6 @@ contract waviii is ERC20Mintable {
     symbol = "waviii";
     decimals = 18;
     standard = "waviii Token v1.0";
-    statement = "Something Cool";
+    statement = "Be waviii.";
   }
 }
