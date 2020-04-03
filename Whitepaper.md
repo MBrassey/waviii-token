@@ -1,1 +1,1 @@
-Be waviii.
+waviii Token is part of the waviii decentralized application suite. 
