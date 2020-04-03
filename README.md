@@ -1,6 +1,6 @@
+<img align="right" src="waviii_test.png">
 ![waviii_logo](Etherscan.io/waviii_logo_small.png) 
 # waviii
-<img align="right" src="waviii_test.png">
 
 ERC-20 Ethereum Token
 
