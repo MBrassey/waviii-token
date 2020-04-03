@@ -14,4 +14,4 @@ ERC-20 Ethereum Token
 
     Total Supply: 1,000 waviii
 
-    contract address: 0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2
+    Contract Address: 0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2
