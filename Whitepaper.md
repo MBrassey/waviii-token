@@ -1,4 +1,4 @@
-waviii Token is part of the waviii decentralized application suite. 
+waviii Token is part of the "waviii Decentralized Application Suite". 
 
 waviii is an experimental development platform. 
 
