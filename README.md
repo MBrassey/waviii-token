@@ -1,7 +1,7 @@
 # waviii
 ERC-20 Ethereum Token
 
-─── [waviii_Etherscan.io](https://etherscan.io/token/0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2)
+─── [Etherscan.io](https://etherscan.io/token/0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2)
 
 ![waviii_test](waviii_test.png)
 
