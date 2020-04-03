@@ -1,3 +1,4 @@
+![waviii_logo](Etherscan.io/waviii_logo_small.png) 
 # waviii
 ERC-20 Ethereum Token
 
