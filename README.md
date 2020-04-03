@@ -1,4 +1,4 @@
-<img align="right" src="waviii_test.png">
+<img align="right" src="Etherscan.io/waviii.gif">
 
 ![waviii_logo](Etherscan.io/waviii_logo_small.png) 
 # waviii
