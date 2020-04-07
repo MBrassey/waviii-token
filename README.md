@@ -10,6 +10,8 @@ ERC-20 Ethereum Token
 
 <img align="right" src="https://img.shields.io/badge/ERC--20-Compliant-%232c91c8">
 
+<img align="right" src="https://img.shields.io/badge/Total%20Supply-1%2C000-%232c91c8">
+
     [node v10.15.2]
     [npm v5.8.0]
     [Truffle v5.0.5]
