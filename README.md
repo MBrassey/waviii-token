@@ -5,7 +5,7 @@
 
 ERC-20 Ethereum Token
 
-─── [Custom Crafted Tokens](https://etherscan.io/token/0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2)<br />
+─── [Custom Crafted Tokens](https://waviii.io)<br />
 ─── [iiiWallet (Official waviii Wallet)](https://github.com/luc1dLife/iiiWallet)
 
 <a href="https://etherscan.io/token/0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2"><img align="right" src="https://img.shields.io/badge/ERC--20-Compliant-%232c91c8"></a>
