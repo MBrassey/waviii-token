@@ -10,6 +10,7 @@ An ERC-20 Compliant Ethereum Token
 
 
 Introduction:
+    
     A fungible Token linked 1:1 with the price of Ether (ETH) with a Total Supply of 1,000 waviii. waviii token 
     conducts the inner liquidity of the waviii.io *Decentralized Application Development Service Platform*. 
     It acts as a bridge between the cryptospace or fiat and the waviii marketplace and exchanges where Blockchain 
