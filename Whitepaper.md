@@ -13,10 +13,10 @@ Introduction:
     
     A fungible Token linked 1:1 with the price of Ether (ETH) with a Total Supply of 1,000 waviii. waviii token 
     conducts the inner liquidity of the waviii.io *Decentralized Application Development Service Platform*. 
-    It acts as a bridge between the cryptospace or fiat and the waviii marketplace and exchanges where Blockchain 
-    Application Services and Benifits can be Purchased using the Token. 
+    It acts as a bridge between the cryptospace at large and the waviii.io marketplace and exchange where Blockchain 
+    Application Services and Benifits can Only be Purchased using the Token. 
 
-<img align="center" src="Etherscan.io/One_Wav.png">
+<img align="middle" src="Etherscan.io/One_Wav.png">
 
     ERC-20 Token.   One hundred millionth of a single waviii Token (0.00000001) is the smallest unit called a "wav". 
     
