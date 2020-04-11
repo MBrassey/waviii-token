@@ -2,7 +2,7 @@
 
 # waviii
 
-An ERC-20 Compliant Ethereum Token <img align="right" src="https://img.shields.io/badge/ERC--20-Compliant-%232c91c8"></a>
+An ERC-20 Ethereum Token <img align="right" src="https://img.shields.io/badge/ERC--20-Compliant-%232c91c8"></a>
 
     Luc1d
     Luc1d@waviii.io
