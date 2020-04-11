@@ -20,7 +20,8 @@ Introduction:
   <img src="Etherscan.io/One_Wav.png">
 </p>
 
-    ERC-20 Token.   One hundred millionth of a single waviii Token (0.00000001) is the smallest unit called a "wav". 
-    
-    
-    The token is an ERC-20 Mintable token built from Openzeppalin node libraries and waviii.sol which is the sourcecode and configuration for the waviii token.  
+ERC-20 Token:   
+
+    One hundred millionth of a single waviii Token (0.00000001) is the smallest unit called a "wav". The token is an 
+    ERC-20 Mintable built from Openzeppalin node_modules and waviii.sol which is the sourcecode and configuration for 
+    the waviii token.  
