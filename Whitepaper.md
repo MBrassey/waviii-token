@@ -1,7 +1,8 @@
 ![waviii_logo](Etherscan.io/waviii_logo_small.png) 
-#waviii
 
-waviii: An ERC-20 Standardized Ethereum Token
+# waviii
+
+An ERC-20 Standardized Ethereum Token
 
     Luc1d
     Luc1d@waviii.io
@@ -17,4 +18,4 @@ waviii: An ERC-20 Standardized Ethereum Token
     ERC-20 Token.   One hundred millionth of a single waviii Token (0.00000001) is the smallest unit called a "wav". 
     
     
-    The token is an ERC-20 Mintable token built from Openzeppalin node libraries and waviii.sol which is the sourcecode and configuration for the waviii token. 
+    The token is an ERC-20 Mintable token built from Openzeppalin node libraries and waviii.sol which is the sourcecode and configuration for the waviii token.  
