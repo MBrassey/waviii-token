@@ -22,6 +22,6 @@ Introduction:
 
 ERC-20 Token:   
 
-    At 18 Decimals, One hundred millionth of a single waviii Token (0.00000001) is the smallest unit called a "wav". 
-    waviii is an ERC-20 Mintable built from Openzeppalin node_modules and waviii.sol which is the sourcecode and 
-    configuration for the waviii token.  
+    One hundred millionth of a single waviii Token (0.00000001) is the smallest unit called a "wav". 
+    waviii is an ERC-20 Mintable built from Openzeppalin node_modules and waviii.sol which is the 
+    sourcecode and configuration for the waviii token.  
