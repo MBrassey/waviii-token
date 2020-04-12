@@ -1,5 +1,3 @@
-![waviii_logo](Etherscan.io/waviii_logo_small.png) 
-
 # waviii
 
 An ERC-20 Ethereum Token <img align="right" src="https://img.shields.io/badge/ERC--20-Compliant-%232c91c8"></a>
