@@ -10,7 +10,7 @@ An ERC-20 Ethereum Token <img align="right" src="https://img.shields.io/badge/ER
 Introduction
 
     waviii.io is a dynamic and feature rich suite of decentralized application, smart contract, token and 
-    blockchain development products. The waviiitoken, wallet and related dapps including all of their 
+    blockchain development products. The waviii Token, Wallet and related Dapps including all of their 
     functionalities serve as an example of the blockchain engineering products waviii.io offers. 
 
 The Token    
