@@ -21,5 +21,5 @@ The ERC-20 Token
     Blockchain and Dapp Development Services and Benifits can be Purchased using waviii Tokens. 
 
     One hundred millionth of a single waviii Token (0.00000001) is the smallest unit called a "wav". waviii is a 
-    standard and compliant ERC-20 Mintable Token. The tokens functionality and security have been throughly tested 
+    standard and compliant ERC-20 Mintable Token. The tokens functionality and security have been deeply tested 
     and verified. 
