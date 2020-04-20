@@ -13,7 +13,7 @@ Introduction
     blockchain development products. The waviii Token, Wallet and related Dapps including all of their 
     functionalities serve as an example of the blockchain products waviii.io offers. 
 
-The ERC-20 Token    
+ERC-20 Token    
 
     A fungible Token linked 1:1 to the value of Ether (ETH) with a Total Supply of 1,000 waviii. waviii token 
     conducts the inner liquidity of the waviii.io Decentralized Application Development Service Platform. 
