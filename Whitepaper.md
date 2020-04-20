@@ -20,6 +20,5 @@ The ERC-20 Token
     The Token is a bridge between the cryptospace at large and the waviii.io marketplace and exchange where 
     Blockchain and Dapp Development Services and Benifits can be Purchased using waviii Tokens. 
 
-    One hundred millionth of a single waviii Token (0.00000001) is the smallest unit called a "wav". waviii is an 
-    ERC-20 Mintable built from Openzeppalin node_modules and waviii.sol which is the sourcecode and configuration 
-    for the waviii token.  
+    One hundred millionth of a single waviii Token (0.00000001) is the smallest unit called a "wav". waviii is a 
+    secure and compliant ERC-20 Mintable Token.  
