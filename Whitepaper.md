@@ -14,9 +14,6 @@ Introduction:
     The Token is a bridge between the cryptospace at large and the waviii.io marketplace and exchange where 
     Blockchain and Dapp Development Services and Benifits can be Purchased using waviii Tokens. 
 
-<p align="center">
-  <img src="Etherscan.io/One_Wav.png">
-</p>
 
 ERC-20 Token:   
 
