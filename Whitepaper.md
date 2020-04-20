@@ -22,4 +22,4 @@ The ERC-20 Token
 
     One hundred millionth of a single waviii Token (0.00000001) is the smallest unit called a "wav". waviii is a 
     standard and compliant ERC-20 Mintable Token. The tokens functionality and security have been deeply tested 
-    and verified. The token was deployed to Ethereum Mainnet on 2020.04.02. 
+    and verified. waviii token was deployed to Ethereum Mainnet on 2020.04.02. 
