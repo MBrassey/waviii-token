@@ -28,3 +28,10 @@ ERC-721 Token
 
     A non-fungible Token (NFT) used for authentication and identification purposes (Token Based Authentication). 
     To access the members only section of waviii.io, the user must posess a waviii NFT in their Ethereum wallet. 
+
+Security
+
+    Mythril is a security analysis tool for EVM bytecode. It detects security vulnerabilities in smart contracts 
+    built for Ethereum. The waviii ERC-20 & ERC-721 Tokens Pass the Mythril Analyzer. 
+
+<img align="right" src="MythPass.png">
