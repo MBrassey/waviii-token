@@ -34,4 +34,4 @@ Security
     Mythril is a security analysis tool for EVM bytecode. It detects security vulnerabilities in smart contracts 
     built for Ethereum. The waviii ERC-20 & ERC-721 Tokens Pass the Mythril Analyzer. 
 
-<img align="right" src="MythPass.png">
+<img align="right" src="Etherscan.io/MythPass.png">
