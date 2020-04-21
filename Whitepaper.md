@@ -1,6 +1,6 @@
 # waviii
 
-Blockchain & Decentralized Application Development <img align="right" src="https://img.shields.io/badge/ERC--20-Compliant-%232c91c8"></a>
+Blockchain & Decentralized Application Development <img align="right" src="https://img.shields.io/badge/ERC--20-Compliant-%232c91c8"><img align="right" src="https://img.shields.io/badge/Mythril-Passing-%232c91c8"><img align="right" src="https://img.shields.io/badge/Total%20Supply-1%2C000-%232c91c8">
 
     Luc1d Life
     Luc1d@waviii.io
