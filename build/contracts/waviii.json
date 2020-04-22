@@ -2206,12 +2206,12 @@
         }
       },
       "links": {},
-      "address": "0x37108E4555a0e0270634CecEDac62b5B19679Ac8",
-      "transactionHash": "0x30167a1547d6444e6de405912017741c825d9b881894864e277bcb9a59dae431"
+      "address": "0x4DE109a0deff48812DdFFf05a6d108dEF5d2eF89",
+      "transactionHash": "0xe1746bf5ed1517b23bedbcae36a73939c5a62dbf0934f362ae5fd73654ce08cd"
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2020-04-03T16:40:24.851Z",
+  "updatedAt": "2020-04-22T19:57:38.175Z",
   "devdoc": {
     "methods": {
       "allowance(address,address)": {
