@@ -1,7 +1,7 @@
 # waviii
-
-ERC-20 Ethereum Token
 ![waviii_logo](Etherscan.io/waviii_logo_small.png) 
+ERC-20 Ethereum Token
+
 ─── [Custom Crafted Tokens](https://waviii.io)<br />
 ─── [iiiWallet (Official waviii Wallet)](https://github.com/luc1dLife/iiiWallet)
 
