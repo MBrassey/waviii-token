@@ -3,7 +3,8 @@
 ERC-20 Ethereum Token with Openzeppelin
 
 ─── [wavWallet](https://github.com/luc1dLife/wavWallet)<br />
-─── [wavSwap](https://github.com/luc1dLife/wavSwap)
+─── [wavSwap](https://github.com/luc1dLife/wavSwap)<br />
+─── [waviii.io](https://github.com/luc1dLife/waviii.io)
 
 <p align="left">
 <a href="https://etherscan.io/token/0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2"><img src="Etherscan.io/waviii_badges.png"></a><br /><br />
