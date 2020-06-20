@@ -1,4 +1,4 @@
-# waviii Token Limited
+# waviii Token
 ![waviii_logo](Etherscan.io/waviii_logo_small.png) 
 ERC-20 Ethereum Token with Openzeppelin
 
