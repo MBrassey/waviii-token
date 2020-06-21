@@ -6,10 +6,8 @@
   <img src="Etherscan.io/waviii.gif">
 </p>
 
-<br />
-```
     Total Supply: 1,000
     Mythril Tested: Passing
     Truffle Tested: Passing
     Deployed to Ethereum Mainnet 
-```    
+ 
