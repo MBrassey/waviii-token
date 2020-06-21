@@ -4,6 +4,4 @@ ERC-20 Ethereum Token with Openzeppelin
 
 ─── [Mainnet Contract](https://etherscan.io/token/0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2)<br />
 
-<p align="center">
-<a href="https://etherscan.io/token/0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2" target="_blank"><img align="left" src="Etherscan.io/waviii.gif"></a>
-</p>
+<a href="https://etherscan.io/token/0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2" target="_blank"><img align="center" src="Etherscan.io/waviii.gif"></a>
