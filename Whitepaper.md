@@ -2,8 +2,8 @@
 
 Blockchain & Decentralized Application Development <img align="right" src="Etherscan.io/erc20_compliant.svg"><img align="right" src="Etherscan.io/myth_pass.svg"><img align="right" src="Etherscan.io/total_supply.svg">
 
-    Luc1d Life
-    Luc1d@waviii.io
+    Matt Brassey
+    matt@brassey.io
     waviii.io
 
 
