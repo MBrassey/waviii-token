@@ -1,19 +1,13 @@
 ## waviii-token
 
-The waviii ERC-20 Token is deployed to the Ethereum Mainnet and has a total supply of 1 million.
+The waviii ERC-20 token is powered by a SmartContract deployed to the Ethereum Mainnet. The token was originally developed using OpenZeppelin libraries and deployed with the truffle framework. In the second release, I updated the token smartcontract to a lighter model with an integrated exchange contract deployed using the Ethereum RemixIDE. waviii-token is the official ERC-20 token used by the [waviii.io](https://github.com/MBrassey/waviii.io) dApp.
 
 [![licensebadge](https://img.shields.io/badge/license-CC0_1.0_Universal-blue)](https://github.com/MBrassey/waviii-token/blob/main/LICENSE)
-[![time tracker](https://wakatime.com/badge/github/MBrassey/waviii-token.svg)](https://wakatime.com/@532855a8-3081-4600-a53d-4262beb65d14/projects/vnkbpbfjis?start=2021-01-24&end=2021-02-02)
 
 #### Issues
 
-- [x] [Setup Initial App](https://github.com/MBrassey/waviii-token/issues/1)
-- [x] [Style, React Animations & Update Text Data](https://github.com/MBrassey/waviii-token/issues/2)
-- [x] [Fetch & Display waviii Price / Minify SCSS](https://github.com/MBrassey/waviii-token/issues/3)
-- [x] [Re-factor & Fetch waviii Price and Chart Data Directly](https://github.com/MBrassey/waviii-token/issues/4)
-- [x] [Stylize, IPFS Routing & Handle Errors](https://github.com/MBrassey/waviii-token/issues/5)
-- [x] [Media Queries / Locked Views](https://github.com/MBrassey/waviii-token/issues/6)
-- [x] [Unit Test, Create Readme & Deploy](https://github.com/MBrassey/waviii-token/issues/7)
+- [x] [Create ERC-20 Token, Test & Deploy to Ethereum Mainnet](https://github.com/MBrassey/waviii-token/issues/1)
+- [x] [Documentation](https://github.com/MBrassey/waviii-token/issues/2)
 
 #### Table of Contents
 
@@ -32,69 +26,442 @@ The waviii ERC-20 Token is deployed to the Ethereum Mainnet and has a total supp
 
 #### SmartContracts
 
-waviii-token's main components consist of two Smartcontracts and a Web3 ERC-20 Token wallet. Both Smartcontracts are deployed to the Ethereum Mainnet blockchain and the wallet component can be reviewed [here](https://github.com/MBrassey/waviii-wallet). 
+For educational purposes, waviii-token was rolled out in two iterations.
 
-1. The first is the waviii ERC-20 Token itself. The live Token Smartcontract can be viewed on [Etherscan](https://etherscan.io/token/0x9cc6754d16b98a32ec9137df6453ba84597b9965) and its Source Code on [GitHub](https://github.com/MBrassey/waviii-token).
+1. I deployed the [original](0xba00868912af1a409f11e9c2b5d3a9376cb3c2e2) waviii token to Ethereum Mainnet on [Apr-02-2020 02:28:26 PM +UTC](https://etherscan.io/tx/0x5cdf36d71d8ad88e79547bf3293de111a3f23c1f675767c0376a40fcd52576a0) using the Solidity Multiple files format. The token consists of [8 OpenZeppelin Smartcontracts](https://etherscan.io/address/0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2#code) and has a total supply of 1,000. I used the Truffle Suite to deploy and test the contracts initially on my local machine, and then on Ethereum Mainnet ([deployment log]()).
+
+> Contract 9 of 9: waviii.sol
+
+    pragma solidity ^0.5.0;
+
+    import "./ERC20Mintable.sol";
+
+    contract waviii is ERC20Mintable {
+        string public name;
+        string public symbol;
+        uint256 public decimals;
+        string public standard;
+        string public statement;
+
+    constructor() public {
+        name = "waviii Token";
+        symbol = "waviii";
+        decimals = 18;
+        standard = "waviii Token v1.0";
+        statement = "Be waviii.";
+        }
+    }
+
+The "Be waviii." statement can be viewed on the blockchain at [number 9](https://etherscan.io/readContract?m=normal&a=0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2&v=0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2#readCollapse9).
+
+> Contract 1 of 9: Context.sol
+
+    pragma solidity ^0.5.0;
+
+    import "./Context.sol";
+    import "./IERC20.sol";
+    import "./SafeMath.sol";
+
+    contract ERC20 is Context, IERC20 {
+        using SafeMath for uint256;
+
+        mapping (address => uint256) private _balances;
+        mapping (address => mapping (address => uint256)) private _allowances;
+
+        uint256 private _totalSupply;
+
+        function totalSupply() public view returns (uint256) {
+            return _totalSupply;
+        }
+
+        function balanceOf(address account) public view returns (uint256) {
+            return _balances[account];
+        }
+
+        function transfer(address recipient, uint256 amount) public returns (bool) {
+            _transfer(_msgSender(), recipient, amount);
+            return true;
+        }
+
+        function allowance(address owner, address spender) public view returns (uint256) {
+            return _allowances[owner][spender];
+        }
+
+        function approve(address spender, uint256 amount) public returns (bool) {
+            _approve(_msgSender(), spender, amount);
+            return true;
+        }
+
+        function transferFrom(address sender, address recipient, uint256 amount) public returns (bool) {
+            _transfer(sender, recipient, amount);
+            _approve(sender, _msgSender(), _allowances[sender][_msgSender()].sub(amount, "ERC20: transfer amount exceeds allowance"));
+            return true;
+        }
+
+        function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
+            _approve(_msgSender(), spender, _allowances[_msgSender()][spender].add(addedValue));
+            return true;
+        }
+
+        function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) {
+            _approve(_msgSender(), spender, _allowances[_msgSender()][spender].sub(subtractedValue, "ERC20: decreased allowance below zero"));
+            return true;
+        }
+
+        function _transfer(address sender, address recipient, uint256 amount) internal {
+            require(sender != address(0), "ERC20: transfer from the zero address");
+            require(recipient != address(0), "ERC20: transfer to the zero address");
+
+            _balances[sender] = _balances[sender].sub(amount, "ERC20: transfer amount exceeds balance");
+            _balances[recipient] = _balances[recipient].add(amount);
+            emit Transfer(sender, recipient, amount);
+        }
+
+        function _mint(address account, uint256 amount) internal {
+            require(account != address(0), "ERC20: mint to the zero address");
+
+            _totalSupply = _totalSupply.add(amount);
+            _balances[account] = _balances[account].add(amount);
+            emit Transfer(address(0), account, amount);
+        }
+
+        function _burn(address account, uint256 amount) internal {
+            require(account != address(0), "ERC20: burn from the zero address");
+
+            _balances[account] = _balances[account].sub(amount, "ERC20: burn amount exceeds balance");
+            _totalSupply = _totalSupply.sub(amount);
+            emit Transfer(account, address(0), amount);
+        }
+
+        function _approve(address owner, address spender, uint256 amount) internal {
+            require(owner != address(0), "ERC20: approve from the zero address");
+            require(spender != address(0), "ERC20: approve to the zero address");
+
+            _allowances[owner][spender] = amount;
+            emit Approval(owner, spender, amount);
+        }
+
+        function _burnFrom(address account, uint256 amount) internal {
+            _burn(account, amount);
+            _approve(account, _msgSender(), _allowances[account][_msgSender()].sub(amount, "ERC20: burn amount exceeds allowance"));
+        }
+    }
+
+> Contract 2 of 9: ERC20.sol
+
+    pragma solidity ^0.5.0;
+
+    import "./Context.sol";
+    import "./IERC20.sol";
+    import "./SafeMath.sol";
+
+    contract ERC20 is Context, IERC20 {
+        using SafeMath for uint256;
+
+        mapping (address => uint256) private _balances;
+        mapping (address => mapping (address => uint256)) private _allowances;
+
+        uint256 private _totalSupply;
+
+        function totalSupply() public view returns (uint256) {
+            return _totalSupply;
+        }
+
+        function balanceOf(address account) public view returns (uint256) {
+            return _balances[account];
+        }
+
+        function transfer(address recipient, uint256 amount) public returns (bool) {
+            _transfer(_msgSender(), recipient, amount);
+            return true;
+        }
+
+        function allowance(address owner, address spender) public view returns (uint256) {
+            return _allowances[owner][spender];
+        }
+
+        function approve(address spender, uint256 amount) public returns (bool) {
+            _approve(_msgSender(), spender, amount);
+            return true;
+        }
+
+        function transferFrom(address sender, address recipient, uint256 amount) public returns (bool) {
+            _transfer(sender, recipient, amount);
+            _approve(sender, _msgSender(), _allowances[sender][_msgSender()].sub(amount, "ERC20: transfer amount exceeds allowance"));
+            return true;
+        }
+
+        function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
+            _approve(_msgSender(), spender, _allowances[_msgSender()][spender].add(addedValue));
+            return true;
+        }
+
+        function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) {
+            _approve(_msgSender(), spender, _allowances[_msgSender()][spender].sub(subtractedValue, "ERC20: decreased allowance below zero"));
+            return true;
+        }
+
+        function _transfer(address sender, address recipient, uint256 amount) internal {
+            require(sender != address(0), "ERC20: transfer from the zero address");
+            require(recipient != address(0), "ERC20: transfer to the zero address");
+
+            _balances[sender] = _balances[sender].sub(amount, "ERC20: transfer amount exceeds balance");
+            _balances[recipient] = _balances[recipient].add(amount);
+            emit Transfer(sender, recipient, amount);
+        }
+
+        function _mint(address account, uint256 amount) internal {
+            require(account != address(0), "ERC20: mint to the zero address");
+
+            _totalSupply = _totalSupply.add(amount);
+            _balances[account] = _balances[account].add(amount);
+            emit Transfer(address(0), account, amount);
+        }
+
+        function _burn(address account, uint256 amount) internal {
+            require(account != address(0), "ERC20: burn from the zero address");
+
+            _balances[account] = _balances[account].sub(amount, "ERC20: burn amount exceeds balance");
+            _totalSupply = _totalSupply.sub(amount);
+            emit Transfer(account, address(0), amount);
+        }
+
+        function _approve(address owner, address spender, uint256 amount) internal {
+            require(owner != address(0), "ERC20: approve from the zero address");
+            require(spender != address(0), "ERC20: approve to the zero address");
+
+            _allowances[owner][spender] = amount;
+            emit Approval(owner, spender, amount);
+        }
+
+        function _burnFrom(address account, uint256 amount) internal {
+            _burn(account, amount);
+            _approve(account, _msgSender(), _allowances[account][_msgSender()].sub(amount, "ERC20: burn amount exceeds allowance"));
+        }
+    }
+
+> Contract 3 of 9: ERC20Mintable.sol
+
+    pragma solidity ^0.5.0;
+
+    import "./ERC20.sol";
+    import "./MinterRole.sol";
+
+    contract ERC20Mintable is ERC20, MinterRole {
+
+        function mint(address account, uint256 amount) public onlyMinter returns (bool) {
+            _mint(account, amount);
+            return true;
+        }
+    }
+
+> Contract 4 of 9: IERC20.sol
+
+    pragma solidity ^0.5.0;
+
+    interface IERC20 {
+
+        function totalSupply() external view returns (uint256);
+        function balanceOf(address account) external view returns (uint256);
+        function transfer(address recipient, uint256 amount) external returns (bool);
+        function allowance(address owner, address spender) external view returns (uint256);
+        function approve(address spender, uint256 amount) external returns (bool);
+        function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+
+        event Transfer(address indexed from, address indexed to, uint256 value);
+        event Approval(address indexed owner, address indexed spender, uint256 value);
+    }
+
+> Contract 5 of 9: Migrations.sol
+
+    pragma solidity >=0.4.21 <0.6.0;
+
+    contract Migrations {
+        address public owner;
+        uint public last_completed_migration;
+
+        constructor() public {
+            owner = msg.sender;
+        }
+
+        modifier restricted() {
+            if (msg.sender == owner) _;
+        }
+
+        function setCompleted(uint completed) public restricted {
+            last_completed_migration = completed;
+        }
+
+        function upgrade(address new_address) public restricted {
+            Migrations upgraded = Migrations(new_address);
+            upgraded.setCompleted(last_completed_migration);
+        }
+    }
+
+> Contract 6 of 9: MinterRole.sol
+
+    pragma solidity ^0.5.0;
+
+    import "./Context.sol";
+    import "../Roles.sol";
+
+    contract MinterRole is Context {
+        using Roles for Roles.Role;
+
+        event MinterAdded(address indexed account);
+        event MinterRemoved(address indexed account);
+
+        Roles.Role private _minters;
+
+        constructor () internal {
+            _addMinter(_msgSender());
+        }
+
+        modifier onlyMinter() {
+            require(isMinter(_msgSender()), "MinterRole: caller does not have the Minter role");
+            _;
+        }
+
+        function isMinter(address account) public view returns (bool) {
+            return _minters.has(account);
+        }
+
+        function addMinter(address account) public onlyMinter {
+            _addMinter(account);
+        }
+
+        function renounceMinter() public {
+            _removeMinter(_msgSender());
+        }
+
+        function _addMinter(address account) internal {
+            _minters.add(account);
+            emit MinterAdded(account);
+        }
+
+        function _removeMinter(address account) internal {
+            _minters.remove(account);
+            emit MinterRemoved(account);
+        }
+    }
+
+> Contract 7 of 9: Roles.sol
+
+    pragma solidity ^0.5.0;
+
+    library Roles {
+        struct Role {
+            mapping (address => bool) bearer;
+        }
+
+        function add(Role storage role, address account) internal {
+            require(!has(role, account), "Roles: account already has role");
+            role.bearer[account] = true;
+        }
+
+        function remove(Role storage role, address account) internal {
+            require(has(role, account), "Roles: account does not have role");
+            role.bearer[account] = false;
+        }
+
+        function has(Role storage role, address account) internal view returns (bool) {
+            require(account != address(0), "Roles: account is the zero address");
+            return role.bearer[account];
+        }
+    }
+
+> Contract 8 of 9: SafeMath.sol
+
+    pragma solidity ^0.5.0;
+
+    library SafeMath {
+        function add(uint256 a, uint256 b) internal pure returns (uint256) {
+            uint256 c = a + b;
+            require(c >= a, "SafeMath: addition overflow");
+
+            return c;
+        }
+
+        function sub(uint256 a, uint256 b) internal pure returns (uint256) {
+            return sub(a, b, "SafeMath: subtraction overflow");
+        }
+
+        function sub(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
+            require(b <= a, errorMessage);
+            uint256 c = a - b;
+
+            return c;
+        }
+
+        function mul(uint256 a, uint256 b) internal pure returns (uint256) {
+            // Gas optimization: this is cheaper than requiring 'a' not being zero, but the
+            // benefit is lost if 'b' is also tested.
+            // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522
+            if (a == 0) {
+                return 0;
+            }
+
+            uint256 c = a * b;
+            require(c / a == b, "SafeMath: multiplication overflow");
+
+            return c;
+        }
+
+        function div(uint256 a, uint256 b) internal pure returns (uint256) {
+            return div(a, b, "SafeMath: division by zero");
+        }
+
+        function div(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
+            // Solidity only automatically asserts when dividing by 0
+            require(b > 0, errorMessage);
+            uint256 c = a / b;
+            // assert(a == b * c + a % b); // There is no case in which this doesn't hold
+
+            return c;
+        }
+
+        function mod(uint256 a, uint256 b) internal pure returns (uint256) {
+            return mod(a, b, "SafeMath: modulo by zero");
+        }
+
+        function mod(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
+            require(b != 0, errorMessage);
+            return a % b;
+        }
+    }
+
 
 > Token
 > [<img src="src/assets/img/Token.gif">](https://github.com/MBrassey/waviii-token)
 
-2. The second contract is the Token Swap, the single source for buying and selling the waviii token in exchange for ETH. Most of the one million originally minted waviii Tokens still reside on this contract, they can be traded at any time and posess real world value pegged to a fraction of ETH. The live Token Swap Smartcontract can be viewed on [Etherscan](https://etherscan.io/address/0x38abf018ea2f8066813c376a197b6df0349d86c5) and its Source Code on [GitHub](https://github.com/MBrassey/waviii-swap).
+2. The second contract is the token swap, the single source for buying and selling the waviii token in exchange for ETH. Most of the one million originally minted waviii tokens still reside on this contract, they can be traded at any time and posess real world value pegged to a fraction of ETH. The live token swap Smartcontract can be viewed on [Etherscan](https://etherscan.io/address/0x38abf018ea2f8066813c376a197b6df0349d86c5) and its Source Code on [GitHub](https://github.com/MBrassey/waviii-swap).
 
 > Swap
 > [<img src="src/assets/img/Swap.gif">](https://github.com/MBrassey/waviii-swap)
 
-3. The Web3 ERC-20 Token Wallet for the waviii Ethereum Token. 
+3. The Web3 ERC-20 Token Wallet for the waviii Ethereum Token.
 
 > Wallet
 > [<img src="src/assets/img/Wallet.gif">](https://github.com/MBrassey/waviii-wallet)
 
-#### IPFS
+#### waviii
 
-waviii-token's codebase is setup with continuous deployment to three platforms: Heroku, GitHub Pages and Fleek (IPFS). On Fleek, the images, text, styles and javascript are all hosted on the InterPlanetary FileSystem (IPFS) in a fully decentralized way. In connjunction with the Ethereum SmartContract backend, waviii-token is a dApp (Decentralized Application). As there is no central point of failure or central point of management, the dApp is highly redundant as well as highly censorship resistant. I have plans to deploy waviii-token as waviii.crypto to decentralize it's DNS as well thgough unstoppable domains. 
+waviii-token's codebase is setup with continuous deployment to three platforms: Heroku, GitHub Pages and Fleek (IPFS). On Fleek, the images, text, styles and javascript are all hosted on the InterPlanetary FileSystem (IPFS) in a fully decentralized way. In connjunction with the Ethereum SmartContract backend, waviii-token is a dApp (Decentralized Application). As there is no central point of failure or central point of management, the dApp is highly redundant as well as highly censorship resistant. I have plans to deploy waviii-token as waviii.crypto to decentralize it's DNS as well thgough unstoppable domains.
 
 - [x] [waviii on Heroku](https://waviii.herokuapp.com/)
 - [x] [waviii on Fleek (IPFS)](https://waviii.on.fleek.co/)
 - [x] [waviii on GitHub Pages](https://mbrassey.github.io/waviii-token/)
 
-#### CoinGeko
+#### waviii-remix
 
-I decided to use the CoinGecko's cryptocurrency API through RapidAPI for my chart data and current waviii price. Since waviii has a 100/1 fixed exchange rate with ETH, I simply performed this calculation inline while defining the datapoints as shown below.
-
-    getCurrentPrice = () => {
-    var options = {
-      method: "GET",
-      url: "https://coingecko.p.rapidapi.com/simple/price",
-      params: { ids: "ethereum", vs_currencies: "usd" },
-      headers: {
-        "x-rapidapi-key": "RAPID_API_KEY",
-        "x-rapidapi-host": "coingecko.p.rapidapi.com",
-      },
-    };
-
-    axios
-      .request(options)
-      .then((response) => {
-        this.setState({ loading: true });
-        const ETH = response.data.ethereum.usd;
-        const raw = ETH / 100;
-        const waviii = raw.toFixed(2);
-        const max_num = waviii * 1.1 ;
-        this.setState({ max: max_num });
-        this.setState({ price: waviii });
-        const month = `${moment().format("MMM")}`;
-        this.setState({ month: month.toUpperCase() });
-        this.setState({ loading: false });
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-    };
+I
 
 #### Requirements
 
     node
     npm
+    truffle
+    ganache
 
 #### Installation
 
@@ -102,14 +469,11 @@ I decided to use the CoinGecko's cryptocurrency API through RapidAPI for my char
 
 #### Usage
 
-    npm run start
-    npm run test (optional)
-    browse: localhost:3001/
+    ganache-cli
+    truffle migrate
+    truffle test
 
 <h6><p align="right">:cyclone: Click the image(s) below to view the live <a id="Demo" href="https://waviii-token/">wabapplication</a></p></h6>
-
-> Video
-> [<img src="src/assets/img/Video.png">](https://youtu.be/2kR6eHG2ve8)
 
 > Demo
 > [<img src="src/assets/img/Demo.gif">](https://waviii-token/)
