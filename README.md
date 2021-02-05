@@ -569,19 +569,14 @@ This deployment was a little different, I wanted to bring real value to the wavi
     truffle migrate
     truffle test
 
-<h6><p align="right">:cyclone: Click the image(s) below to view the live <a id="Demo" href="https://waviii-token/">wabapplication</a></p></h6>
-
-> Demo
-> [<img src="src/assets/img/Demo.gif">](https://waviii-token/)
+> waviii
+> [<img src="./img/Token.gif">](https://waviii-token/)
 
 > Setup
-> [<img src="src/assets/img/Setup.gif">](https://waviii-token/)
+> [<img src="./img/Setup.gif">](https://waviii-token/)
 
 > Test
-> [<img src="src/assets/img/Test.gif">](https://waviii-token/)
-
-> Project Development Statistics
-> [<img src="src/assets/img/Workload.svg">](https://wakatime.com/@532855a8-3081-4600-a53d-4262beb65d14/projects/vnkbpbfjis?start=2021-01-24&end=2021-02-02)
+> [<img src="./img/Test.gif">](https://waviii-token/)
 
 #### Questions
 
