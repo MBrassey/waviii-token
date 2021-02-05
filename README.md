@@ -28,6 +28,8 @@ The waviii ERC-20 token is powered by a SmartContract deployed to the Ethereum M
 
 For educational purposes, waviii-token was rolled out in two iterations. I deployed the [original](0xba00868912af1a409f11e9c2b5d3a9376cb3c2e2) waviii token to Ethereum Mainnet on [Apr-02-2020 02:28:26 PM +UTC](https://etherscan.io/tx/0x5cdf36d71d8ad88e79547bf3293de111a3f23c1f675767c0376a40fcd52576a0) using the Solidity Multiple files format. This original token consists of [eight OpenZeppelin Smartcontracts](https://etherscan.io/address/0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2#code) and has a total supply of 1,000. I used the Truffle Suite to deploy and test the contracts initially on my local machine, and then on Ethereum Mainnet ([deployment log]()).
 
+###### waviii v1
+
 > Contract 9 of 9: waviii.sol
 
     pragma solidity ^0.5.0;
@@ -427,6 +429,8 @@ The "Be waviii." statement can be viewed on the blockchain at [dropdown number 9
             return a % b;
         }
     }
+
+###### waviii v2
 
 I wrote and tested and deployed the second and [official](https://etherscan.io/address/0x9cc6754d16b98a32ec9137df6453ba84597b9965) waviii token in the Ethereum RemixIDE. The deployment date was: [Jun-19-2020 12:32:09 AM +UTC](https://etherscan.io/tx/0x2c36979dc9517c4c056572241f60037a541175d67e52964fc41c70c83fc48eb7). The new waviii token consists of only one simple SmartContract and has a total supply of one million.
 
