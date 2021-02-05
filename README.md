@@ -24,6 +24,10 @@ The waviii ERC-20 token is powered by a SmartContract deployed to the Ethereum M
 > ERC-20 Token
 > [<img src="./img/waviii-token.png">](https://etherscan.io/address/0x9cc6754d16b98a32ec9137df6453ba84597b9965)
 
+#### Whitepaper
+
+The immediate goal of the waviii Token is to be the main reference utility crypto-currency used within the waviii.io decentralized application ecosystem. The broader objective of the waviii Token for example, could be to establish itself as the crypto-currency of choice for anyone in the industry fulfilling a task with a smart contract. Over time, by adding new waviii dApps, like token staking, betting games, storage systems, social networks and automated trading, we intend to capitalize on a trend that is growing exponentially in our industry: the decentralisation of tasks around the world and the use of smart contracts to fulfil them. If this were more than my portfolio demo, we would see the waviii Token as an opportunity for anyone - even the under-banked, the underserved, or the next wave of 4 billion individuals who are getting access to the internet – to find useful incentives for their work and improve their financial condition through access to a new decentralised financial system built upon the Ethereum Network.
+
 #### SmartContracts
 
 For educational purposes, waviii-token was rolled out in two iterations. I deployed the [original](0xba00868912af1a409f11e9c2b5d3a9376cb3c2e2) waviii token to Ethereum Mainnet on [Apr-02-2020 02:28:26 PM +UTC](https://etherscan.io/tx/0x5cdf36d71d8ad88e79547bf3293de111a3f23c1f675767c0376a40fcd52576a0) using the Solidity Multiple files format. This original token consists of [eight OpenZeppelin Smartcontracts](https://etherscan.io/address/0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2#code) and has a total supply of 1,000. I used the Truffle Suite to deploy and test the contracts initially on my local machine, and then on Ethereum Mainnet ([deployment log](./waviiiv1/Etherscan.io/mainnet_deployment_log.txt)).
