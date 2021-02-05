@@ -22,11 +22,11 @@ The waviii ERC-20 token is powered by a SmartContract deployed to the Ethereum M
 - [License](#License)
 
 > Application Preview
-> [<img src="src/assets/img/Preview.png">](https://waviii-token/)
+> [<img src="src/assets/img/waviii-token.png">](https://etherscan.io/address/0x9cc6754d16b98a32ec9137df6453ba84597b9965)
 
 #### SmartContracts
 
-For educational purposes, waviii-token was rolled out in two iterations. I deployed the [original](0xba00868912af1a409f11e9c2b5d3a9376cb3c2e2) waviii token to Ethereum Mainnet on [Apr-02-2020 02:28:26 PM +UTC](https://etherscan.io/tx/0x5cdf36d71d8ad88e79547bf3293de111a3f23c1f675767c0376a40fcd52576a0) using the Solidity Multiple files format. The token consists of [eight OpenZeppelin Smartcontracts](https://etherscan.io/address/0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2#code) and has a total supply of 1,000. I used the Truffle Suite to deploy and test the contracts initially on my local machine, and then on Ethereum Mainnet ([deployment log]()).
+For educational purposes, waviii-token was rolled out in two iterations. I deployed the [original](0xba00868912af1a409f11e9c2b5d3a9376cb3c2e2) waviii token to Ethereum Mainnet on [Apr-02-2020 02:28:26 PM +UTC](https://etherscan.io/tx/0x5cdf36d71d8ad88e79547bf3293de111a3f23c1f675767c0376a40fcd52576a0) using the Solidity Multiple files format. This original token consists of [eight OpenZeppelin Smartcontracts](https://etherscan.io/address/0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2#code) and has a total supply of 1,000. I used the Truffle Suite to deploy and test the contracts initially on my local machine, and then on Ethereum Mainnet ([deployment log]()).
 
 > Contract 9 of 9: waviii.sol
 
@@ -50,7 +50,7 @@ For educational purposes, waviii-token was rolled out in two iterations. I deplo
         }
     }
 
-The "Be waviii." statement can be viewed on the blockchain at [number 9](https://etherscan.io/readContract?m=normal&a=0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2&v=0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2#readCollapse9).
+The "Be waviii." statement can be viewed on the blockchain at [dropdown number 9](https://etherscan.io/readContract?m=normal&a=0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2&v=0xBA00868912Af1a409F11E9c2B5d3a9376Cb3C2E2#readCollapse9).
 
 > Contract 1 of 9: Context.sol
 
@@ -428,10 +428,125 @@ The "Be waviii." statement can be viewed on the blockchain at [number 9](https:/
         }
     }
 
-> Token
-> [<img src="src/assets/img/Token.gif">](https://github.com/MBrassey/waviii-token)
+I wrote and tested and deployed the second and [official](https://etherscan.io/address/0x9cc6754d16b98a32ec9137df6453ba84597b9965) waviii token in the Ethereum RemixIDE. The deployment date was: [Jun-19-2020 12:32:09 AM +UTC](https://etherscan.io/tx/0x2c36979dc9517c4c056572241f60037a541175d67e52964fc41c70c83fc48eb7). The new waviii token consists of only one simple SmartContract and has a total supply of one million.
 
-2. The second contract is the token swap, the single source for buying and selling the waviii token in exchange for ETH. Most of the one million originally minted waviii tokens still reside on this contract, they can be traded at any time and posess real world value pegged to a fraction of ETH. The live token swap Smartcontract can be viewed on [Etherscan](https://etherscan.io/address/0x38abf018ea2f8066813c376a197b6df0349d86c5) and its Source Code on [GitHub](https://github.com/MBrassey/waviii-swap).
+> Token Source Code
+
+    pragma solidity ^0.5.0;
+
+    contract Token {
+        string  public name = "waviii";
+        string  public symbol = "waviii";
+        uint256 public totalSupply = 1000000000000000000000000; // 1 million tokens
+        uint8   public decimals = 18;
+
+        event Transfer(
+            address indexed _from,
+            address indexed _to,
+            uint256 _value
+        );
+
+        event Approval(
+            address indexed _owner,
+            address indexed _spender,
+            uint256 _value
+        );
+
+        mapping(address => uint256) public balanceOf;
+        mapping(address => mapping(address => uint256)) public allowance;
+
+        constructor() public {
+            balanceOf[msg.sender] = totalSupply;
+        }
+
+        function transfer(address _to, uint256 _value) public returns (bool success) {
+            require(balanceOf[msg.sender] >= _value);
+            balanceOf[msg.sender] -= _value;
+            balanceOf[_to] += _value;
+            emit Transfer(msg.sender, _to, _value);
+            return true;
+        }
+
+        function approve(address _spender, uint256 _value) public returns (bool success) {
+            allowance[msg.sender][_spender] = _value;
+            emit Approval(msg.sender, _spender, _value);
+            return true;
+        }
+
+        function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
+            require(_value <= balanceOf[_from]);
+            require(_value <= allowance[_from][msg.sender]);
+            balanceOf[_from] -= _value;
+            balanceOf[_to] += _value;
+            allowance[_from][msg.sender] -= _value;
+            emit Transfer(_from, _to, _value);
+            return true;
+        }
+    }
+
+This deployment was a little different, I wanted to bring real value to the waviii token by linking it's value directly to Ether's. The second SmartContract controls the value of waviii through a hard link 1:100 with Mainnet Ether.
+
+> Swap Source Code
+
+    pragma solidity ^0.5.0;
+
+    import "./waviii.sol";
+
+    contract EthSwap {
+        string public name = "wavSwap";
+        Token public token;
+        uint public rate = 100;
+
+        event TokensPurchased(
+            address account,
+            address token,
+            uint amount,
+            uint rate
+        );
+
+        event TokensSold(
+            address account,
+            address token,
+            uint amount,
+            uint rate
+        );
+
+        constructor(Token _token) public {
+            token = _token;
+        }
+
+        function buyTokens() public payable {
+            // Calculate the number of tokens to buy
+            uint tokenAmount = msg.value * rate;
+
+            // Require that EthSwap has enough tokens
+            require(token.balanceOf(address(this)) >= tokenAmount);
+
+            // Transfer tokens to the user
+            token.transfer(msg.sender, tokenAmount);
+
+            // Emit an event
+            emit TokensPurchased(msg.sender, address(token), tokenAmount, rate);
+        }
+
+        function sellTokens(uint _amount) public {
+            // User can't sell more tokens than they have
+            require(token.balanceOf(msg.sender) >= _amount);
+
+            // Calculate the amount of Ether to redeem
+            uint etherAmount = _amount / rate;
+
+            // Require that EthSwap has enough Ether
+            require(address(this).balance >= etherAmount);
+
+            // Perform sale
+            token.transferFrom(msg.sender, address(this), _amount);
+            msg.sender.transfer(etherAmount);
+
+            // Emit an event
+            emit TokensSold(msg.sender, address(token), _amount, rate);
+        }
+    }
 
 > Swap
 > [<img src="src/assets/img/Swap.gif">](https://github.com/MBrassey/waviii-swap)
