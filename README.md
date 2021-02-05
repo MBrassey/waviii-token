@@ -14,10 +14,10 @@ The waviii ERC-20 token is powered by a SmartContract deployed to the Ethereum M
 - [SmartContracts](#SmartContracts)
 - [waviii v1](#waviiiv1)
 - [waviii v2](#waviiiv2)
-- [Setup](#Setup)
 - [Requirements](#Requirements)
 - [Installation](#Installation)
 - [Usage](#Usage)
+- [Demo](#Demo)
 - [Questions](#Questions)
 - [License](#License)
 
@@ -568,6 +568,8 @@ This deployment was a little different, I wanted to bring real value to the wavi
     ganache-cli
     truffle migrate
     truffle test
+
+#### Demo
 
 > waviii.io
 > [<img src="./img/Token.gif">](https://github.com/MBrassey/waviii.io)
