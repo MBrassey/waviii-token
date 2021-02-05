@@ -12,12 +12,10 @@ The waviii ERC-20 token is powered by a SmartContract deployed to the Ethereum M
 #### Table of Contents
 
 - [SmartContracts](#SmartContracts)
-- [IPFS](#IPFS)
-- [CoinGeko](#CoinGeko)
+- [Setup](#Setup)
 - [Requirements](#Requirements)
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Demo](#Demo)
 - [Questions](#Questions)
 - [License](#License)
 
@@ -488,7 +486,7 @@ I wrote and tested and deployed the second and [official](https://etherscan.io/a
         }
     }
 
-This deployment was a little different, I wanted to bring real value to the waviii token by linking it's value directly to Ether's. The second SmartContract controls the value of waviii through a hard link 1:100 with Mainnet Ether.
+This deployment was a little different, I wanted to bring real value to the waviii token by linking it's value directly to Ether's. The [Swap](https://etherscan.io/address/0x38abf018ea2f8066813c376a197b6df0349d86c5) SmartContract was deployed on [Jun-19-2020 12:33:59 AM +UTC](https://etherscan.io/tx/0xb0f8900bf7b5874ca0c6c7f30c23897c7451c1978fdb86e493cd0fc0d5a59648), it controls the value of waviii through a hard link 1:100 with Mainnet Ether.
 
 > Swap Source Code
 
@@ -551,26 +549,6 @@ This deployment was a little different, I wanted to bring real value to the wavi
             emit TokensSold(msg.sender, address(token), _amount, rate);
         }
     }
-
-> Swap
-> [<img src="src/assets/img/Swap.gif">](https://github.com/MBrassey/waviii-swap)
-
-3. The Web3 ERC-20 Token Wallet for the waviii Ethereum Token.
-
-> Wallet
-> [<img src="src/assets/img/Wallet.gif">](https://github.com/MBrassey/waviii-wallet)
-
-#### waviii
-
-waviii-token's codebase is setup with continuous deployment to three platforms: Heroku, GitHub Pages and Fleek (IPFS). On Fleek, the images, text, styles and javascript are all hosted on the InterPlanetary FileSystem (IPFS) in a fully decentralized way. In connjunction with the Ethereum SmartContract backend, waviii-token is a dApp (Decentralized Application). As there is no central point of failure or central point of management, the dApp is highly redundant as well as highly censorship resistant. I have plans to deploy waviii-token as waviii.crypto to decentralize it's DNS as well thgough unstoppable domains.
-
-- [x] [waviii on Heroku](https://waviii.herokuapp.com/)
-- [x] [waviii on Fleek (IPFS)](https://waviii.on.fleek.co/)
-- [x] [waviii on GitHub Pages](https://mbrassey.github.io/waviii-token/)
-
-#### waviii-remix
-
-I
 
 #### Requirements
 
