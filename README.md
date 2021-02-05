@@ -21,7 +21,7 @@ The waviii ERC-20 token is powered by a SmartContract deployed to the Ethereum M
 - [Questions](#Questions)
 - [License](#License)
 
-> waviii Token
+> ERC-20 Token
 > [<img src="./img/waviii-token.png">](https://etherscan.io/address/0x9cc6754d16b98a32ec9137df6453ba84597b9965)
 
 #### SmartContracts
