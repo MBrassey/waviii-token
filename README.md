@@ -492,7 +492,7 @@ I wrote and tested and deployed the second and [official](https://etherscan.io/a
         }
     }
 
-This deployment was a little different, I wanted to bring real value to the waviii token by linking it's value directly to Ether's. The [Swap](https://etherscan.io/address/0x38abf018ea2f8066813c376a197b6df0349d86c5) SmartContract was deployed on [Jun-19-2020 12:33:59 AM +UTC](https://etherscan.io/tx/0xb0f8900bf7b5874ca0c6c7f30c23897c7451c1978fdb86e493cd0fc0d5a59648), it controls the value of waviii through a hard link 1:100 with Mainnet Ether.
+This deployment was a little different, I wanted to bring real value to the waviii token by linking it's value directly to Ether's. The [Swap](https://etherscan.io/address/0x38abf018ea2f8066813c376a197b6df0349d86c5) SmartContract was deployed on [Jun-19-2020 12:33:59 AM +UTC](https://etherscan.io/tx/0xb0f8900bf7b5874ca0c6c7f30c23897c7451c1978fdb86e493cd0fc0d5a59648), it controls the value of waviii through a hard link 1:100 with Mainnet Ether. I funded the Swap SmartContract with all the available waviii tokens so they are ready for trade at any time.
 
 > Swap Source Code
 
