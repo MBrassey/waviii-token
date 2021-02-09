@@ -578,11 +578,8 @@ This deployment was a little different, I wanted to bring real value to the wavi
 > Official ERC-20 Token for waviii.io
 > [<img src="./img/Token.gif">](https://github.com/MBrassey/waviii.io)
 
-> Setup
-> [<img src="./img/Setup.gif">](https://waviii-token/)
-
 > Deploy & Test
-> [<img src="./img/Test.gif">](https://waviii-token/)
+> [<img src="./img/DeployTest.gif">](https://waviii-token/)
 
 #### Questions
 
