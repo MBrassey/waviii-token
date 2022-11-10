@@ -21,7 +21,7 @@
     "chai-bignumber": "3.0.0",
     "dotenv": "^8.2.0",
     "mithril": "^2.0.4",
-    "mocha": "^7.1.0",
+    "mocha": "^10.1.0",
     "truffle-hdwallet-provider": "^1.0.17"
   }
 }
